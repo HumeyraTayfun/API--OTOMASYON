@@ -53,8 +53,14 @@ https://restful-booker.herokuapp.com/booking url'ine asagidaki body'ye sahip
         reqBody.put("additionalneeds" , "wi-fi");
 
         Response response=given().contentType(ContentType.JSON).when().body(reqBody.toString()).post(url);
-        response.then().assertThat().statusCode(200).contentType("application-json").body("booking.firstname",equalTo("Ahmet")
-                );
+        response.then().assertThat().statusCode(200).contentType("application-json").body("booking.firstname",equalTo("Ahmet"),
+                "booking.lastname", equalTo("Bulut"),
+                "booking.totalprice", equalTo(500),
+                "booking.depositpaid", equalTo(false),
+                "booking.bookingdates.checkin", equalTo("2021-06-01"),
+                "booking.bookingdates.checkout", equalTo("2021-06-10"),
+                "booking.additionalneeds",equalTo("wi-fi"));
+
 
 
     }

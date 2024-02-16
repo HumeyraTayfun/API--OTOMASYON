@@ -57,14 +57,14 @@ public class C8_JsonPathKullanimi {
         System.out.println("isim:" +personalInfo.get("firstName"));
         System.out.println("soyisim:"+ personalInfo.get("lastName"));
         System.out.println("yas:" + personalInfo.get("age"));
-        System.out.println("adres:" + personalInfo.getJSONObject("address").get("streetAdress")+"\n\t\t"
-                                    +personalInfo.getJSONObject("address").get("postalCode")+"    "
-                                     + personalInfo.getJSONObject("adress").get("city"));
+        System.out.println("Adres : "+personalInfo.getJSONObject("address").get("streetAddress")+"\n\t\t\t"
+                +personalInfo.getJSONObject("address").get("postalCode")+"     "
+                +personalInfo.getJSONObject("address").get("city"));
 
-        System.out.println("Telefon"+personalInfo.getJSONArray("phoneNumbers").getJSONObject(0).get("type")+"-"
-                                     +personalInfo.getJSONArray("phoneNumbers").getJSONObject(0).get("number")+"\n\t\t"
-                                     +personalInfo.getJSONArray("phoneNumbers").getJSONObject(1).get("type")+"  "
-                                      +personalInfo.getJSONArray("phoneNumbers").getJSONObject(1).get("number"));
+        System.out.println("Telefon : "+personalInfo.getJSONArray("phoneNumbers").getJSONObject(0).get("type")+"-"
+                +personalInfo.getJSONArray("phoneNumbers").getJSONObject(0).get("number")+"\n\t\t"
+                +personalInfo.getJSONArray("phoneNumbers").getJSONObject(1).get("type")+"-"
+                +personalInfo.getJSONArray("phoneNumbers").getJSONObject(1).get("number"));
 
 
     }
